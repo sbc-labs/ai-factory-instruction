@@ -1,0 +1,13 @@
+{
+  "_comment": "Copy to ai-workspace/plan/tools.json in planning Step 0 and keep only the keys the stack needs. Every key is optional; the tools' defaults (TypeScript/Node-centric, see each tool's -h) stay as they are. The instructions folder itself is never edited for a project.",
+  "contract_track": "backend",
+  "banned": ["\\bconsole\\.log\\(", "\\bunwrap\\(\\)"],
+  "host_hints": "https?://[^\\s'\"]*(api\\.|\\.ai/|\\.io/v\\d|amazonaws\\.com)",
+  "source_ext": "\\.(ts|tsx|py|go)$",
+  "test_file": "(\\.test\\.|\\.spec\\.|_test\\.|(^|/)test_|(^|/)tests?/)",
+  "skip_dirs": ["node_modules", ".git", "dist", "build", ".venv", "target", "vendor", "coverage"],
+  "test_call": "\\b(it|test|describe)\\s*[\\('\"]|^\\s*def\\s+test_|^\\s*func\\s+Test",
+  "skip_markers": "\\.skip\\s*\\(|\\bxit\\s*\\(|\\.todo\\s*\\(|@pytest\\.mark\\.skip|\\bt\\.Skip\\b",
+  "secret_patterns": ["\\bmyco_[A-Za-z0-9]{32}\\b"],
+  "log_files": ["docs/CHANGELOG-BUILD\\.md$"]
+}
